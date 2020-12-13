@@ -1,0 +1,5 @@
+# The following extensions and directories will be ignored by git tracking:
+
+*.o
+*.pyc
+*.user
