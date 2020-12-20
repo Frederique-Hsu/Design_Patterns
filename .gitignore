@@ -1,5 +1,19 @@
 # The following extensions and directories will be ignored by git tracking:
 
 *.o
+*.exe
 *.pyc
 *.user
+*.obj
+*.tlog
+*.db
+*.ipch
+*.filters
+*.log
+*.pdb
+*.ilk
+*.opendb
+*.idb
+*.recipe
+
+.vs/
