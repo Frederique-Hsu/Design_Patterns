@@ -6,7 +6,7 @@
 
 #include "Abstration.hpp"
 #include "ConcreteImplementation.hpp"
-#include "ExtendedAbstration.hpp"
+#include "ExtendedAbstraction.hpp"
 
 void ClientCode(const Abstraction& abstract);
 
