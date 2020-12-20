@@ -1,6 +1,6 @@
 #include "Multi_Inheritance_Adapter.hpp"
 
-#include <functional>
+#include <algorithm>
 
 std::string MIAdapter::Request() const
 {
