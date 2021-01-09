@@ -4,19 +4,13 @@ CONFIG += -std=c+=11
 HEADERS += \
     Abstration.hpp \
     ConcreteImplementation.hpp \
-    ExtendedAbstration.hpp \
+    ExtendedAbstraction.hpp \
     Implementation.hpp
 
 SOURCES += \
     Abstration.cpp \
     ConcreteImplementation.cpp \
-    ExtendedAbstration.cpp \
+    ExtendedAbstraction.cpp \
     Implementation.cpp \
     main.cpp
 
-DISTFILES += \
-    Abstraction.py \
-    ConcreteImplementation.py \
-    ExtendedAbstraction.py \
-    Implementation.py \
-    main.py
