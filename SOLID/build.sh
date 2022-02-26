@@ -12,3 +12,5 @@ g++ -std=c++17 OCP.cpp -o OCP.o
 g++ -std=c++17 LSP.cpp -o LSP.o
 
 g++ -std=c++17 ISP.cpp -o ISP.o
+
+g++ -std=c++17 DIP.cpp -o DIP.o
