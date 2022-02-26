@@ -9,45 +9,30 @@
  *  
  */
 
+#include "SRP.hpp"
 
-#include <string>
-#include <vector>
 #include <fstream>
 #include <iostream>
 #include <boost/lexical_cast.hpp>
 
-struct Journal
+Journal::Journal(const std::string& title) : title{title}
 {
-    std::string title;
-    std::vector<std::string> entries;
+}
 
-    explicit Journal(const std::string& title) : title{title}
-    {
-    }
-
-    void add(const std::string& entry)
-    {
-        static int count = 1;
-        entries.push_back(boost::lexical_cast<std::string>(count++) + ": " + entry);
-    }
-
-    const std::vector<std::string>& getEntries() const
-    {
-        return entries;
-    }
-};
-
-struct PersistenceManager
+void Journal::add(const std::string& entry)
 {
-    static void save(const Journal& journal, const std::string& filename)
+    static int count = 1;
+    entries.push_back(boost::lexical_cast<std::string>(count++) + ": " + entry);
+}
+
+void PersistenceManager::save(const Journal& journal, const std::string& filename)
+{
+    std::ofstream ofs(filename);
+    for (auto& entry : journal.entries)
     {
-        std::ofstream ofs(filename);
-        for (auto& entry : journal.entries)
-        {
-            ofs << entry << std::endl;
-        }
+        ofs << entry << std::endl;
     }
-};
+}
 
 int main(int argc, char* argv[])
 {
@@ -58,5 +43,6 @@ int main(int argc, char* argv[])
     journal.add("I cried today");
     journal.add("I ate a bug");
 
+    PersistenceManager::save(journal, "log.txt");
     return 0;
 }
