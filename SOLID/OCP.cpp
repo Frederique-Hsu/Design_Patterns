@@ -96,6 +96,7 @@ int main(int argc, char* argv[])
     ColorSpecification green(Color::Green);
     SizeSpecification large(Size::Large);
     // AndSpecification<Product> green_and_large(large, green);
+    // auto green_and_large = ColorSpecification(Color::Green) && SizeSpecification(Size::Large);
     auto green_and_large = std::move(green) && std::move(large);
 #if 0
     auto green_things = bf.filter(all, green);
