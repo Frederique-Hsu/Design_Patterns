@@ -1,3 +1,6 @@
-[submodule "design-patterns-in-modern-cpp"]
-	path = design-patterns-in-modern-cpp
+[submodule "references/design-patterns-for-cpp"]
+	path = references/design-patterns-for-cpp
+	url = https://github.com/daileyet/designpattern4cplusplus.git
+[submodule "references/design-patterns-in-modern-cpp"]
+	path = references/design-patterns-in-modern-cpp
 	url = git@github.com:Apress/design-patterns-in-modern-cpp.git
