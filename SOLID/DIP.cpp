@@ -8,7 +8,7 @@
 
 #include "DIP.hpp"
 
-Reporting::Reporting(const ILogger& logger) : logger{logger}
+Reporting::Reporting(const ILogger& logger) : logger{const_cast<ILogger&>(logger)}
 {
 }
 
@@ -33,7 +33,7 @@ void ConsoleLogger::Log(const std::string& log)
     std::cout << "LOG: " << log.c_str() << std::endl;
 }
 
-Car::Car(std::unique_ptr<Engine> engine, const std::shared_ptr<ILogger> logger)
+Car::Car(std::unique_ptr<Engine> engine, const std::shared_ptr<ILogger>& logger)
     : engine(std::move(engine)), logger(logger)
 {
     logger->Log("making a car");
