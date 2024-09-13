@@ -40,3 +40,16 @@ void Door::enter()
     /*! \todo   implement this method later */
     throw UnimplementedException(std::string(__FUNCTION__));
 }
+
+DoorNeedingSpell::DoorNeedingSpell(Room* r1, Room* r2) : Door(r1, r2)
+{
+}
+
+DoorNeedingSpell::~DoorNeedingSpell()
+{
+}
+
+DoorNeedingSpell* DoorNeedingSpell::clone() const
+{
+    return new DoorNeedingSpell(*this);
+}

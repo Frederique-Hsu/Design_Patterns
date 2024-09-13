@@ -27,3 +27,12 @@ public:
     virtual Door* clone() const;
     virtual void enter() override;
 };
+
+class DoorNeedingSpell : public Door
+{
+public:
+    DoorNeedingSpell(Room* r1, Room* r2);
+    virtual ~DoorNeedingSpell();
+public:
+    virtual DoorNeedingSpell* clone() const override;
+};

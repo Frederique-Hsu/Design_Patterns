@@ -8,6 +8,7 @@
 #include "room.hpp"
 
 #include "user_exception.hpp"
+#include "spell.hpp"
 
 Room::Room(int no) : MapSite(), m_room_no{no}, m_sides{nullptr, nullptr, nullptr, nullptr}
 {
@@ -43,4 +44,25 @@ void Room::enter()
 {
     /*! \todo   implement this method later */
     throw UnimplementedException(std::string(__FUNCTION__));
+}
+
+RoomWithABomb::RoomWithABomb(int no, bool bombed) : Room(no), m_has_bomb{bombed}
+{
+}
+
+RoomWithABomb::~RoomWithABomb()
+{
+}
+
+bool RoomWithABomb::hasBomb() const
+{
+    return m_has_bomb;
+}
+
+EnchantedRoom::EnchantedRoom(int room_no, Spell* magic_stick) : Room{room_no}, m_spell{magic_stick}
+{
+}
+
+EnchantedRoom::~EnchantedRoom()
+{
 }

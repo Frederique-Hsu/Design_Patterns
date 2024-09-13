@@ -25,3 +25,25 @@ public:
     virtual Room* clone() const;
     virtual void enter() override;
 };
+
+class RoomWithABomb : public Room
+{
+public:
+    RoomWithABomb(int no = 0, bool bombed = false);
+    virtual ~RoomWithABomb();
+private:
+    bool m_has_bomb;
+public:
+    bool hasBomb() const;
+};
+
+class Spell;
+
+class EnchantedRoom : public Room
+{
+public:
+    EnchantedRoom(int room_no, Spell* magic_stick);
+    virtual ~EnchantedRoom();
+private:
+    Spell* m_spell;
+};

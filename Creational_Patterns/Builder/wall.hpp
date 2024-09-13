@@ -19,3 +19,14 @@ public:
     virtual Wall* clone() const;
     virtual void enter() override;
 };
+
+class BombedWall : public Wall
+{
+public:
+    BombedWall();
+    virtual ~BombedWall();
+private:
+    bool m_has_bomb;
+public:
+    bool hasBomb() const;
+};

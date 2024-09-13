@@ -27,3 +27,16 @@ void Wall::enter()
     /*! \todo   implement this method later */
     throw UnimplementedException(std::string(__FUNCTION__));
 }
+
+BombedWall::BombedWall() : m_has_bomb(bool{})
+{
+}
+
+BombedWall::~BombedWall()
+{
+}
+
+bool BombedWall::hasBomb() const
+{
+    return m_has_bomb;
+}
