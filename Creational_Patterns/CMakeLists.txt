@@ -2,9 +2,7 @@ cmake_minimum_required(VERSION 3.10 FATAL_ERROR)
 
 project(Creational_Patterns)
 
-list(APPEND COMMON_COMPILE_OPTIONS
-    "-Wall"
-    "-Werror")
+list(APPEND COMMON_COMPILE_OPTIONS)
     
 set(ROOT_PATH ${CMAKE_CURRENT_SOURCE_DIR})
 SET(BUILDER_SUBPROJECT_PATH ${ROOT_PATH}/Builder)

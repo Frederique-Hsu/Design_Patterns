@@ -7,6 +7,12 @@ list(APPEND COMMON_COMPILE_OPTIONS
     "-Wpedantic"
     "-Werror")
 
+if (BUILD_UTEST_FROM_SOURCE)
+    FetchContent_Declare(GTest
+        GIT_REPOSITORY  https://github.com/google/googletest.git
+        GIT_TAG         main)
+    FetchContent_MakeAvailable(GTest)
+endif()
 
 enable_testing()
 
