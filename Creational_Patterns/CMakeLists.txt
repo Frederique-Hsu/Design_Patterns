@@ -2,6 +2,16 @@ cmake_minimum_required(VERSION 3.10 FATAL_ERROR)
 
 project(Creational_Patterns)
 
+if (ON)
+    FetchContent_Declare(CppUTest
+        GIT_REPOSITORY      https://github.com/cpputest/cpputest.git
+        GIT_TAG             master
+        GIT_SHALLOW         TRUE
+        CMAKE_ARGS
+            -DBUILD_LIBRARY_TYPE=Share)
+    FetchContent_MakeAvailable(CppUTest)
+endif()
+
 list(APPEND COMMON_COMPILE_OPTIONS)
     
 set(ROOT_PATH ${CMAKE_CURRENT_SOURCE_DIR})
@@ -27,6 +37,6 @@ enable_testing()
 
 add_subdirectory(Abstract_Factory)
 add_subdirectory(Builder)
-add_subdirectory(Factory_Method)
-add_subdirectory(Prototype)
-add_subdirectory(Singleton)
+# add_subdirectory(Factory_Method)
+# add_subdirectory(Prototype)
+# add_subdirectory(Singleton)s
