@@ -14,11 +14,11 @@ Component* Component::GetParent() const
     return m_parent;
 }
 
-void Component::Add(Component *component)
+void Component::Add(Component* /* component */)
 {
 }
 
-void Component::Remove(Component *component)
+void Component::Remove(Component* /*component */)
 {
 }
 
