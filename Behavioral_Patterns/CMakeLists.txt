@@ -2,10 +2,20 @@ cmake_minimum_required(VERSION 3.10 FATAL_ERROR)
 
 project(Behavioral_Patterns)
 
-list(APPEND COMMON_COMPILE_OPTIONS
-    "-Wall"
-    "-Wpedantic"
-    "-Werror")
+if (BUILD_UTEST_FROM_SOURCE)
+    set(GTest_SRC_PATH      ${PROJECT_BUILD_PATH}/_deps/gtest-src)
+    set(GTest_BUILD_PATH    ${PROJECT_BUILD_PATH}/_deps/gtest-build)
+
+    FetchContent_Declare(GTest
+        GIT_REPOSITORY      https://github.com/google/googletest.git
+        GIT_TAG             main)
+    
+    FetchContent_GetProperties(GTest)
+    if (NOT GTest_POPULATED)
+        FetchContent_Populate(GTest)
+        add_subdirectory(${GTest_SRC_PATH} ${GTest_BUILD_PATH})
+    endif()
+endif()
 
 
 enable_testing()
