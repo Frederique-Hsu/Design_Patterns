@@ -17,5 +17,5 @@ public:
     TextManipulator(const TextShape* pshape);
     ~TextManipulator();
 private:
-    const TextShape* m_text_shape;
+    [[maybe_unused]] const TextShape* m_text_shape;
 };

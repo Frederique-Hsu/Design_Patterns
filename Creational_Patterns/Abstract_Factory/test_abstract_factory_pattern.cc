@@ -11,23 +11,40 @@
 #include "maze_factory.hpp"
 #include "maze.hpp"
 
-BOOST_AUTO_TEST_SUITE(UTest4AbstractFactoryPattern)
+#if (SELECT_TEST_FRAMEWORK == SELECT_BOOST_UNIT_TEST_FRAMEWORK)
+    BOOST_AUTO_TEST_SUITE(UTest4AbstractFactoryPattern)
 
-    BOOST_AUTO_TEST_CASE(CreateBombMazeGameOverMazeFactory)
+        BOOST_AUTO_TEST_CASE(CreateBombMazeGameOverMazeFactory)
+        {
+            MazeGame game;
+            BombedMazeFactory bomb_factory;
+            
+            Maze* maze = game.createMaze(bomb_factory);
+            delete maze;
+        }
+        
+        BOOST_AUTO_TEST_CASE(CreateEnchantedMazeGameOverMazeFactory)
+        {
+            MazeGame game;
+            EnchantedMazeFactory enchanted_factory;
+            
+            game.createMaze(enchanted_factory);
+        }
+        
+    BOOST_AUTO_TEST_SUITE_END()
+#elif (SELECT_TEST_FRAMEWORK == SELECT_CPPUTEST_FRAMEWORK)
+    #include <CppUTest/TestHarness.h>
+
+    TEST_GROUP(UTest4AbstractFactoryPattern)
+    {
+    };
+
+    TEST(UTest4AbstractFactoryPattern, CreateBombMazeGameOverMazeFactory)
     {
         MazeGame game;
         BombedMazeFactory bomb_factory;
-        
+
         Maze* maze = game.createMaze(bomb_factory);
         delete maze;
     }
-    
-    BOOST_AUTO_TEST_CASE(CreateEnchantedMazeGameOverMazeFactory)
-    {
-        MazeGame game;
-        EnchantedMazeFactory enchanted_factory;
-        
-        game.createMaze(enchanted_factory);
-    }
-    
-BOOST_AUTO_TEST_SUITE_END()
+#endif

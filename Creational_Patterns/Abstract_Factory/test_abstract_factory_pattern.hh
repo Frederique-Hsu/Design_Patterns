@@ -7,8 +7,12 @@
 
 #pragma once
 
-#include <boost/test/unit_test.hpp>
+#include "../select_test_framework.hpp"
 
-BOOST_AUTO_TEST_SUITE(UTest4AbstractFactoryPattern)
+#if (SELECT_TEST_FRAMEWORK == SELECT_BOOST_UNIT_TEST_FRAMEWORK)
+    #include <boost/test/unit_test.hpp>
 
-BOOST_AUTO_TEST_SUITE_END()
+    BOOST_AUTO_TEST_SUITE(UTest4AbstractFactoryPattern)
+
+    BOOST_AUTO_TEST_SUITE_END()
+#endif

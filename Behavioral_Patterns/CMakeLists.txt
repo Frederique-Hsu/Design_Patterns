@@ -17,6 +17,12 @@ if (BUILD_UTEST_FROM_SOURCE)
     endif()
 endif()
 
+if (BUILD_UTEST_FROM_SOURCE)
+    FetchContent_Declare(GTest
+        GIT_REPOSITORY  https://github.com/google/googletest.git
+        GIT_TAG         main)
+    FetchContent_MakeAvailable(GTest)
+endif()
 
 enable_testing()
 
