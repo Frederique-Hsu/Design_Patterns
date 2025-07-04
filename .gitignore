@@ -16,6 +16,7 @@
 *.opendb
 *.idb
 *.recipe
+*.DS_Store
 
 .vs/
 build-*/

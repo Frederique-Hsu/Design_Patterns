@@ -13,6 +13,7 @@
 
 #include <fstream>
 #include <iostream>
+
 #include <boost/lexical_cast.hpp>
 
 Journal::Journal(const std::string& title) : title{title}

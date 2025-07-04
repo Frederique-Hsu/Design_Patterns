@@ -6,8 +6,12 @@ set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_EXTENSIONS OFF)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+include(${CMAKE_SOURCE_DIR}/cmake/boost.cmake)
+
 
 add_executable(SRP SRP.cpp SRP.hpp)
+target_include_directories(SRP PRIVATE ${BOOST_INSTALL_DIR}/include)
+add_dependencies(SRP boost)
 
 add_executable(OCP OCP.cpp OCP.hpp)
 
