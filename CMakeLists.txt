@@ -29,3 +29,6 @@ add_subdirectory(SOLID)
 # add_subdirectory(references/DesignPattern)
 
 add_subdirectory(testing)
+
+add_subdirectory(OOC)
+add_subdirectory(object_oriented_c)

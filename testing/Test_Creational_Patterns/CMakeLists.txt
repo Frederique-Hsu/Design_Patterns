@@ -41,3 +41,11 @@ target_link_libraries(${CURRENT_PROJECT_NAME} PRIVATE
 
 target_include_directories(${CURRENT_PROJECT_NAME} PRIVATE
     ${CMAKE_SOURCE_DIR}/Creational_Patterns)
+
+
+#===============================================================================
+
+enable_testing()
+
+add_test(NAME UTest_${CURRENT_PROJECT_NAME}
+    COMMAND $<TARGET_FILE:${CURRENT_PROJECT_NAME}>)
