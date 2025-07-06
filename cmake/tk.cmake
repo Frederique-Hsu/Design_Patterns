@@ -11,7 +11,7 @@ set(TK_DOWNLOAD_DIR     ${CMAKE_BINARY_DIR}/tk-download)
 
 ExternalProject_Add(Tk
     GIT_REPOSITORY          https://github.com/tcltk/tk.git
-    GIT_TAG                 main
+    GIT_TAG                 core-8-6-branch
     GIT_SHALLOW             TRUE
     GIT_PROGRESS            TRUE
     SOURCE_DIR              ${TK_SRC_DIR}

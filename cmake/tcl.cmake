@@ -10,7 +10,7 @@ set(TCL_DOWNLOAD_DIR    ${CMAKE_BINARY_DIR}/tcl-download)
 
 ExternalProject_Add(Tcl
     GIT_REPOSITORY          https://github.com/tcltk/tcl.git
-    GIT_TAG                 main
+    GIT_TAG                 core-8-6-branch
     GIT_SHALLOW             TRUE
     GIT_PROGRESS            TRUE
     SOURCE_DIR              ${TCL_SRC_DIR}

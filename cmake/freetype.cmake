@@ -18,7 +18,7 @@ ExternalProject_Add(FreeType
     DOWNLOAD_DIR            ${FreeType_DOWNLOAD_DIR}
     UPDATE_DISCONNECTED     TRUE
     CMAKE_ARGS
-        -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}
+        -DCMAKE_BUILD_TYPE=Release
         -DBUILD_SHARED_LIBS=ON
         -DCMAKE_INSTALL_PREFIX=${FreeType_INSTALL_DIR}
     BUILD_ALWAYS            FALSE
