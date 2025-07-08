@@ -3,8 +3,10 @@
 *.o
 *.obj
 *.exe
-*.txt
+# *.txt
 
 
+.vs/
+out/
 build/
 3rd_party_libraries/
