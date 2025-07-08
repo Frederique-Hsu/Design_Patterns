@@ -1,0 +1,8 @@
+[submodule "Common"]
+	path = Common
+	url = git@gitee.com:hong-ze_1/common.git
+	branch = frederique_hsu_develop
+[submodule "GeometryDynamic"]
+	path = GeometryDynamic
+	url = git@gitee.com:hong-ze_1/geometry-dynamic.git
+	branch = frederique_hsu_develop
