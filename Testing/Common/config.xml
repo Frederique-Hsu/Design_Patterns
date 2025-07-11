@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<configuration>
+	<!--Configuration for connectiong with a database-->
+	<database>
+		<host>localhost</host>
+		<port>3306</port>
+		<username>root</username>
+		<password>123456</password>
+		<dbname>test_db</dbname>
+	</database>
+	
+	<!--Application parameter configuration-->
+	<app_settings>
+		<debug_mode>true</debug_mode>
+		<max_connection>100</max_connection>
+		<timeout>30</timeout>
+	</app_settings>
+	
+	<!--Log path configuration-->
+	<log>
+		<path>/var/log/app.log</path>
+		<level>INFO</level>
+	</log>
+</configuration>
