@@ -23,3 +23,11 @@ if (${CMAKE_SYSTEM_NAME} STREQUAL "Windows" AND MSVC)
 
     add_subdirectory(Testing)
 endif()
+
+
+if (${CMAKE_SYSTEM_NAME} STREQUAL "Linux")
+    message(STATUS "It is now on the Linux platform...")
+
+    include(cmake/opencascade.cmake)
+    add_subdirectory(Probe_OpenCASCADE)
+endif()
