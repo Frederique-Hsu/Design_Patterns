@@ -101,6 +101,7 @@ ExternalProject_Add(OCCT
         -DBUILD_RESOURCES=ON
         -DBUILD_SAMPLES_QT=ON
         -DINSTALL_SAMPLES=ON
+        -DBUILD_Inspector=ON
     BUILD_ALWAYS            TRUE
     STEP_TARGETS            install
 )
