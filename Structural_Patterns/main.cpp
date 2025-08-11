@@ -9,17 +9,12 @@
  */
 
 
-#include <catch2/catch_session.hpp>
-#include <catch2/catch_test_macros.hpp>
 #include <iostream>
 
 int main(int argc, char* argv[])
 {    
-    return Catch::Session().run(argc, argv);
-}
+    (void)argc;
+    (void)argv;
 
-TEST_CASE("Unit testing for Structural Patterns", "[Structural_Patterns]")
-{
-    std::cout << "Current C++ standard no. is " << __cplusplus << std::endl;
-    CHECK(true);
+    return EXIT_SUCCESS;
 }

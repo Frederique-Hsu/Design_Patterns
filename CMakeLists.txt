@@ -22,10 +22,10 @@ enable_testing()
 
 # add_subdirectory(Behavioral_Patterns)
 # add_subdirectory(Creational_Patterns)
-# add_subdirectory(Structural_Patterns)
-add_subdirectory(SOLID)
+add_subdirectory(Structural_Patterns)
+# add_subdirectory(SOLID)
 # add_subdirectory(references/LexI)
-# add_subdirectory(references/Design-Patterns-GoF)
+add_subdirectory(references/Design-Patterns-GoF)
 # add_subdirectory(references/DesignPattern)
 
 add_subdirectory(testing)

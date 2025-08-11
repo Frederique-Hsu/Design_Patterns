@@ -29,6 +29,9 @@ if (USE_ExternalProject)
         STEP_TARGETS        install
     )
 
+    set(CATCH2_INCLUDE_DIR  ${CATCH2_INSTALL_DIR}/include)
+    set(CATCH2_LIB_DIR      ${CATCH2_INSTALL_DIR}/lib)
+
 elseif (USE_FetchContent)
 
     include(FetchContent)
