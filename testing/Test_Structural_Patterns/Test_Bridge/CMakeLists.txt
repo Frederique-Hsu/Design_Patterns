@@ -1,15 +1,16 @@
-cmake_minimum_required(VERSION     3.20)
+cmake_minimum_required(VERSION  3.20)
 
-project(Test_Adapter)
+project(Test_Bridge)
 
 #===============================================================================
 
 file(GLOB_RECURSE sources
     "*.c*"
-    "${CMAKE_SOURCE_DIR}/Structural_Patterns/Adapter/cpp/*.c*")
+    "${CMAKE_SOURCE_DIR}/Structural_Patterns/Bridge/cpp/*.c*")
+
 file(GLOB_RECURSE headers
     "*.h*"
-    "${CMAKE_SOURCE_DIR}/Structural_Patterns/Adapter/cpp/*.h*")
+    "${CMAKE_SOURCE_DIR}/Structural_Patterns/Bridge/cpp/*.h*")
 
 message(STATUS "${PROJECT_NAME} project's source files list: ")
 foreach(source ${sources})
@@ -26,36 +27,37 @@ message(STATUS "\n")
 
 add_executable(${PROJECT_NAME}
     ../main.cpp
-    ../finalize.hpp
-    ../finalize.cpp
     ${sources}
     ${headers})
 
-add_dependencies(${PROJECT_NAME} catch2)
+add_dependencies(${PROJECT_NAME}    catch2)
 
 #===============================================================================
 
-target_include_directories(${PROJECT_NAME} PRIVATE 
-    ${CMAKE_SOURCE_DIR} 
-    ${CATCH2_INCLUDE_DIR})
-target_link_directories(${PROJECT_NAME} PRIVATE ${CATCH2_LIB_DIR})
-
-if (${CMAKE_BUILD_TYPE} STREQUAL "Debug")
-    target_link_libraries(${PROJECT_NAME} PRIVATE Catch2d)
-else()
-    target_link_libraries(${PROJECT_NAME} PRIVATE Catch2)
-endif()
-
 set_target_properties(${PROJECT_NAME} PROPERTIES
-    CXX_STANDARD            17
-    CXX_EXTENSIONS          NO
+    CXX_STANDARD        17
+    CXX_EXTENSIONS      NO
     CXX_STANDARD_REQUIRED   YES)
 
 target_compile_options(${PROJECT_NAME} PRIVATE
     "-Wall"
     "-Wextra"
-    "-pedantic"
-    "-Werror")
+    "-Wpedantic"
+    "-Werror"
+)
+
+target_include_directories(${PROJECT_NAME} PRIVATE
+    ${CMAKE_SOURCE_DIR}
+    ${CATCH2_INCLUDE_DIR})
+
+target_link_directories(${PROJECT_NAME} PRIVATE
+    ${CATCH2_LIB_DIR})
+
+if (${CMAKE_BUILD_TYPE} STREQUAL "Debug")
+    target_link_libraries(${PROJECT_NAME} PRIVATE   Catch2d)
+else()
+    target_link_libraries(${PROJECT_NAME} PRIVATE   Catch2)
+endif()
 
 #===============================================================================
 

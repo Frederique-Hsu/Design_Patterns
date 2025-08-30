@@ -8,6 +8,7 @@
 #include "class_adapter.hpp"
 
 #include <iostream>
+#include <algorithm>
 
 namespace class_adapter
 {

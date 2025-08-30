@@ -18,5 +18,8 @@ set_target_properties(${CURRENT_PROJECT_NAME} PROPERTIES
     CXX_STANDARD_REQUIRED   YES)
 
 target_compile_options(${CURRENT_PROJECT_NAME} PUBLIC
-    ${CPPFLAGS})
+    "-Wall"
+    "-Wextra"
+    "-pedantic"
+    "-Werror")
 

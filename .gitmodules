@@ -1,22 +1,12 @@
-[submodule "references/design-patterns-for-cpp"]
-	path = references/design-patterns-for-cpp
-	url = https://github.com/daileyet/designpattern4cplusplus.git
-[submodule "references/design-patterns-in-modern-cpp"]
-	path = references/design-patterns-in-modern-cpp
-	url = git@github.com:Apress/design-patterns-in-modern-cpp.git
-[submodule "references/Mastering-Python-Design-Patterns"]
-	path = references/Mastering-Python-Design-Patterns
-	url = https://github.com/PacktPublishing/Mastering-Python-Design-Patterns-Third-Edition.git
-[submodule "references/GoFRefactored"]
-	path = references/GoFRefactored
-	url = https://github.com/zebmason/GoFRefactored.git
-[submodule "references/LexI"]
-	path = references/LexI
-	url = https://github.com/romaonishuk/LexI.git
 [submodule "references/Design-Patterns-GoF"]
 	path = references/Design-Patterns-GoF
 	url = https://github.com/BartVandewoestyne/Design-Patterns-GoF.git
-	branch = master
+[submodule "references/Mastering-Python-Design-Patterns-Third-Edition"]
+	path = references/Mastering-Python-Design-Patterns-Third-Edition
+	url = https://github.com/PacktPublishing/Mastering-Python-Design-Patterns-Third-Edition.git
+[submodule "references/LexI"]
+	path = references/LexI
+	url = https://github.com/romaonishuk/LexI.git
 [submodule "references/DesignPattern"]
 	path = references/DesignPattern
 	url = https://github.com/FengJungle/DesignPattern.git

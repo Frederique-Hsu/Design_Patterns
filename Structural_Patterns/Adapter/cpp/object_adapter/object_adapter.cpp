@@ -9,6 +9,7 @@
 #include "object_adapter.hpp"
 
 #include <iostream>
+#include <algorithm>
 
 namespace object_adapter
 {
