@@ -1,0 +1,11 @@
+# The following file extensions and directories will be ignored by git tracking system:
+
+*.o
+*.obj
+*.exe
+*.pyc
+*.class
+
+
+build/
+3rd_party_libs/
