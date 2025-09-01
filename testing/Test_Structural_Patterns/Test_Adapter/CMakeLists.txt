@@ -35,17 +35,6 @@ add_dependencies(${PROJECT_NAME} catch2)
 
 #===============================================================================
 
-target_include_directories(${PROJECT_NAME} PRIVATE 
-    ${CMAKE_SOURCE_DIR} 
-    ${CATCH2_INCLUDE_DIR})
-target_link_directories(${PROJECT_NAME} PRIVATE ${CATCH2_LIB_DIR})
-
-if (${CMAKE_BUILD_TYPE} STREQUAL "Debug")
-    target_link_libraries(${PROJECT_NAME} PRIVATE Catch2d)
-else()
-    target_link_libraries(${PROJECT_NAME} PRIVATE Catch2)
-endif()
-
 set_target_properties(${PROJECT_NAME} PROPERTIES
     CXX_STANDARD            17
     CXX_EXTENSIONS          NO
@@ -56,6 +45,16 @@ target_compile_options(${PROJECT_NAME} PRIVATE
     "-Wextra"
     "-pedantic"
     "-Werror")
+
+target_include_directories(${PROJECT_NAME} PRIVATE 
+    ${CMAKE_SOURCE_DIR} 
+    ${CATCH2_INCLUDE_DIR})
+    
+target_link_directories(${PROJECT_NAME} PRIVATE ${CATCH2_LIB_DIR})
+
+target_link_libraries(${PROJECT_NAME} PRIVATE
+    $<$<CONFIG:Debug>:Catch2d>
+    $<$<NOT:$<CONFIG:Debug>>:Catch2>)
 
 #===============================================================================
 

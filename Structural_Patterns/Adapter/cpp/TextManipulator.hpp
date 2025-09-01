@@ -20,7 +20,7 @@ namespace class_adapter
         TextManipulator(const class_adapter::TextShape *s);
 
     private:
-        const class_adapter::TextShape *m_text_shape;
+        [[maybe_unused]] const class_adapter::TextShape *m_text_shape;
     };
 }
 
@@ -35,6 +35,6 @@ namespace object_adapter
         TextManipulator(const object_adapter::TextShape *s);
 
     private:
-        const object_adapter::TextShape *m_text_shape;
+        [[maybe_unused]] const object_adapter::TextShape *m_text_shape;
     };
 }

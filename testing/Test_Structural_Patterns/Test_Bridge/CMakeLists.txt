@@ -53,11 +53,9 @@ target_include_directories(${PROJECT_NAME} PRIVATE
 target_link_directories(${PROJECT_NAME} PRIVATE
     ${CATCH2_LIB_DIR})
 
-if (${CMAKE_BUILD_TYPE} STREQUAL "Debug")
-    target_link_libraries(${PROJECT_NAME} PRIVATE   Catch2d)
-else()
-    target_link_libraries(${PROJECT_NAME} PRIVATE   Catch2)
-endif()
+target_link_libraries(${PROJECT_NAME} PRIVATE
+    $<$<CONFIG:Debug>:Catch2d>
+    $<$<NOT:$<CONFIG:Debug>>:Catch2>)
 
 #===============================================================================
 

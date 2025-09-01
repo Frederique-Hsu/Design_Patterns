@@ -7,7 +7,9 @@
 
 #include "PresentationManagerWindowImpl.hpp"
 
+#include <cstdlib>
 #include <cmath>
+#include <algorithm>
 
 #include <stdexcept>
 
