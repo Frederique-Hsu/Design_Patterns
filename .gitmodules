@@ -1,0 +1,9 @@
+[submodule "references/Design-Patterns-GoF"]
+	path = references/Design-Patterns-GoF
+	url = https://github.com/BartVandewoestyne/Design-Patterns-GoF.git
+[submodule "references/Mastering-Python-Design-Patterns"]
+	path = references/Mastering-Python-Design-Patterns
+	url = https://github.com/PacktPublishing/Mastering-Python-Design-Patterns-Third-Edition.git
+[submodule "references/LexI"]
+	path = references/LexI
+	url = https://github.com/romaonishuk/LexI.git
