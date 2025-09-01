@@ -10,3 +10,8 @@ add_subdirectory(Behavioral_Patterns)
 enable_testing()
 
 add_subdirectory(testing)
+
+if (OFF)
+    add_subdirectory(references/Design-Patterns-GoF)
+    add_subdirectory(references/LexI)
+endif()
