@@ -27,6 +27,8 @@ message(STATUS "\n")
 
 add_executable(${PROJECT_NAME}
     ../main.cpp
+    ../finalize.hpp
+    ../finalize.cpp
     ${sources}
     ${headers})
 
