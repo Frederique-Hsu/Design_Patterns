@@ -62,31 +62,43 @@ Composite模式的关键是一个抽象类，它既可以代表图元，又可�
 
 ```mermaid
 classDiagram
-    class Client
+    class Client {
+        + execute(Component *component) void$
+        + execute(Component *component1, Component *component2) void$
+    }
 
     class Component {
         <<interface>>
+        # *m_parent : Component
 
-        + Operation()*
-        + Add(Component)*
-        + Remove(Component)*
-        + GetChild(int)*
+        + ~Component()
+        + setParent(Component *parent) void
+        + *getParent() Component
+
+        + add(Component *component) void*
+        + remove(Component *component) void*
+        + isComposite() bool*
+
+        + virtual operation() std::string*
     }
 
     Client --> Component
 
     class Leaf {
-        + Operation()
+        + operation() std::string
     }
 
     class Composite {
-        + Operation()
-        + Add(Component)
-        + Remove(Component)
-        + GetChild(int)
+        # m_children : std::list<Component *>
+
+        + add(Component *component) void
+        + remove(Component *component) void
+        + isComposite() bool
+
+        + operation() std::string
     }
 
     Component <|-- Leaf
     Component <|-- Composite
-    Component <--o "children" Composite
+    Component <--o "m_children" Composite
 ```

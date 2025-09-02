@@ -28,7 +28,7 @@ TEST_CASE("UTester for Composite Pattern", "[Composite]")
         delete simple;
     }
 
-#if false
+#if true
     SECTION("Check how Composite Pattern recursively works for complex scenario")
     {
         std::shared_ptr<Component> simple(new Leaf);
@@ -54,8 +54,7 @@ TEST_CASE("UTester for Composite Pattern", "[Composite]")
         Client::execute(tree.get(), simple.get());
         std::cout << std::endl;
     }
-#endif
-
+#else
     SECTION("Check how Composite Pattern recursively works for complex scenario")
     {
         Component *simple = new Leaf;
@@ -72,13 +71,13 @@ TEST_CASE("UTester for Composite Pattern", "[Composite]")
 
         Component *branch2 = new Composite;
         auto deleter = finalize([&]() {
-            delete simple;
-            delete tree;
-            delete branch1;
-            delete leaf_1;
-            delete leaf_2;
-            delete leaf_3;
-            delete branch2;
+            delete simple;      simple = nullptr;
+            delete tree;        tree = nullptr;
+            delete branch1;     branch1 = nullptr;
+            delete leaf_1;      leaf_1 = nullptr;
+            delete leaf_2;      leaf_2 = nullptr;
+            delete leaf_3;      leaf_3 = nullptr;
+            delete branch2;     branch2 = nullptr;
         });
 
         branch2->add(leaf_3);
@@ -93,4 +92,5 @@ TEST_CASE("UTester for Composite Pattern", "[Composite]")
         Client::execute(tree, simple);
         std::cout << std::endl;
     }
+#endif
 }
