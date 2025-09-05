@@ -1,23 +1,22 @@
-cmake_minimum_required(VERSION  3.20)
+cmake_minimum_required(VERSION 3.20)
 
-project(Test_Bridge)
+project(Test_Composite)
 
 #===============================================================================
 
 file(GLOB_RECURSE sources
     "*.c*"
-    "${CMAKE_SOURCE_DIR}/Structural_Patterns/Bridge/cpp/*.c*")
+    "${CMAKE_SOURCE_DIR}/Structural_Patterns/Composite/cpp/*.c*")
 
 file(GLOB_RECURSE headers
     "*.h*"
-    "${CMAKE_SOURCE_DIR}/Structural_Patterns/Bridge/cpp/*.h*")
+    "${CMAKE_SOURCE_DIR}/Structural_Patterns/Composite/cpp/*.h*")
 
-message(STATUS "${PROJECT_NAME} project's source files list: ")
+message(STATUS "${PROJECT_NAME} project's code files list: ")
 foreach(source ${sources})
     message(STATUS "\t\t ${source}")
 endforeach()
 
-message(STATUS "${PROJECT_NAME} project's header files list: ")
 foreach(header ${headers})
     message(STATUS "\t\t ${header}")
 endforeach()
@@ -27,8 +26,6 @@ message(STATUS "\n")
 
 add_executable(${PROJECT_NAME}
     ../main.cpp
-    ../finalize.hpp
-    ../finalize.cpp
     ${sources}
     ${headers})
 

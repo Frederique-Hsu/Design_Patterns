@@ -5,6 +5,8 @@
 *.exe
 *.pyc
 *.class
+*.DS_Store
+*.user
 
 
 build/

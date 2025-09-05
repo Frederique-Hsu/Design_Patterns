@@ -9,3 +9,4 @@ include(${CMAKE_SOURCE_DIR}/cmakes/catch2.cmake)
 
 add_subdirectory(Test_Adapter)
 add_subdirectory(Test_Bridge)
+add_subdirectory(Test_Composite)
