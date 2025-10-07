@@ -15,6 +15,12 @@
 #include "Structural_Patterns/Composite/cpp/Client.hpp"
 #include "Structural_Patterns/Composite/cpp/Composite.hpp"
 
+#include "Structural_Patterns/Composite/cpp/Cabinet.hpp"
+#include "Structural_Patterns/Composite/cpp/Chassis.hpp"
+#include "Structural_Patterns/Composite/cpp/Bus.hpp"
+#include "Structural_Patterns/Composite/cpp/Card.hpp"
+#include "Structural_Patterns/Composite/cpp/FloppyDisk.hpp"
+
 #include "testing/Test_Structural_Patterns/finalize.hpp"
 #include "testing/Test_Structural_Patterns/finalize.cpp"
 
@@ -93,4 +99,20 @@ TEST_CASE("UTester for Composite Pattern", "[Composite]")
         std::cout << std::endl;
     }
 #endif
+
+    SECTION("Composite a complex computer recursively")
+    {
+        std::shared_ptr<Cabinet> cabinet(new Cabinet("PC Cabinet"));
+        std::shared_ptr<Chassis> chassis(new Chassis("PC Chassis"));
+
+        cabinet->add(chassis.get());
+
+        std::shared_ptr<Bus> bus(new Bus("MCA Bus"));
+        bus->add(new Card("16Mbs Token Ring"));
+
+        chassis->add(bus.get());
+        chassis->add(new FloppyDisk("3.5inch Floppy"));
+
+        std::cout << "The computer's net price is " << chassis->netPrice() << "\n" << std::endl;
+    }
 }

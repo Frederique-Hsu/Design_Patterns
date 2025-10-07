@@ -24,13 +24,19 @@ if (NOT EXISTS ${GOOGLETEST_SOURCE_DIR}/.git)
         message(FATAL_ERROR "Failed to git clone the ${GIT_REPO_NAME} repository!")
     endif()
 else()
+    # execute_process(
+    #     COMMAND ${GIT_EXECUTABLE} -C ${GOOGLETEST_SOURCE_DIR} describe --tags --exact-match HEAD
+    #     OUTPUT_VARIABLE     current_tag
+    #     OUTPUT_STRIP_TRAILING_WHITESPACE
+    # )
+
     execute_process(
-        COMMAND ${GIT_EXECUTABLE} -C ${GOOGLETEST_SOURCE_DIR} describe --tags --exact-match HEAD
-        OUTPUT_VARIABLE     current_tag
+        COMMAND ${GIT_EXECUTABLE} -C ${GOOGLETEST_SOURCE_DIR} rev-parse --abbrev-ref HEAD
+        OUTPUT_VARIABLE current_branch
         OUTPUT_STRIP_TRAILING_WHITESPACE
     )
 
-    if (NOT ${current_tag} STREQUAL ${GIT_BRANCH})
+    if (NOT ${current_branch} STREQUAL ${GIT_BRANCH})
         execute_process(
             COMMAND ${GIT_EXECUTABLE} -C ${GOOGLETEST_SOURCE_DIR} fetch --depth=${GIT_CLONE_DEPTH} origin ${GIT_BRANCH}:${GIT_BRANCH}
             COMMAND ${GIT_EXECUTABLE} -C ${GOOGLETEST_SOURCE_DIR} checkout ${GIT_BRANCH}
