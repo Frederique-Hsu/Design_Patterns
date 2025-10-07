@@ -3,8 +3,9 @@ cmake_minimum_required(VERSION  3.20)
 project(Composite)
 
 
-file(GLOB_RECURSE sources "*.c*")
-file(GLOB_RECURSE headers "*.h*")
+file(GLOB_RECURSE sources "./cpp/*.c*")
+file(GLOB_RECURSE headers "./cpp/*.h*")
+
 
 add_executable(${PROJECT_NAME}
     ../main.cpp
@@ -24,3 +25,6 @@ target_compile_options(${PROJECT_NAME} PRIVATE
 
 
 add_subdirectory(python)
+if (${CMAKE_SYSTEM_NAME} STREQUAL "Windows")
+    add_subdirectory(c\#)
+endif()
