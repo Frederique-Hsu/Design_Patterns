@@ -4,7 +4,7 @@ project(Composite)
 
 
 file(GLOB_RECURSE sources "*.c*")
-file(GLOB_RECURSE headers "*.c*")
+file(GLOB_RECURSE headers "*.h*")
 
 add_executable(${PROJECT_NAME}
     ../main.cpp
