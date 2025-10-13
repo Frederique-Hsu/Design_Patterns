@@ -4,6 +4,7 @@
 *.obj
 *.exe
 # *.txt
+*.user
 
 
 .vs/

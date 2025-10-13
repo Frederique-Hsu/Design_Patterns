@@ -61,7 +61,8 @@ ExternalProject_Add(FreeImage
         -DCMAKE_INSTALL_PREFIX=${FreeImage_INSTALL_DIR}
     BUILD_ALWAYS                TRUE
     INSTALL_COMMAND             ${CMAKE_COMMAND} --install ${FreeImage_BUILD_DIR} && 
-                                ${CMAKE_COMMAND} -E rename ${FreeImage_INSTALL_DIR}/lib/libFreeImage.so ${FreeImage_INSTALL_DIR}/lib/libfreeimage.so
+                                ${CMAKE_COMMAND} -E copy ${FreeImage_INSTALL_DIR}/lib/libFreeImage.so ${FreeImage_INSTALL_DIR}/lib/libFreeImage_copy.so && 
+                                ${CMAKE_COMMAND} -E rename ${FreeImage_INSTALL_DIR}/lib/libFreeImage_copy.so ${FreeImage_INSTALL_DIR}/lib/libfreeimage.so
     STEP_TARGETS                install
 )
 
