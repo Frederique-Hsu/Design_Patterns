@@ -5,6 +5,7 @@
 *.exe
 # *.txt
 *.user
+*.pdf
 
 
 .vs/
