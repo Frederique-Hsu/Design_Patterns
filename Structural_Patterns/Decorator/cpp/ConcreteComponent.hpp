@@ -11,6 +11,8 @@
 #include "Component.hpp"
 
 
+namespace dive_into_design_patterns
+{
 /*!
  *  \class  ConcreteComponent
  *  \brief  Concrete Components provide default implementations of the operation().
@@ -21,3 +23,4 @@ class ConcreteComponent : public Component
 public:
     std::string operation() const override;
 };
+}

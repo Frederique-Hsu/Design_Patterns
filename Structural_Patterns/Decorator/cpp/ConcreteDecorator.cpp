@@ -7,7 +7,8 @@
 
 #include "ConcreteDecorator.hpp"
 
-
+namespace dive_into_design_patterns
+{
 ConcreteDecoratorA::ConcreteDecoratorA(Component *component) : Decorator{component}
 {
 }
@@ -25,4 +26,5 @@ ConcreteDecoratorB::ConcreteDecoratorB(Component *component) : Decorator{compone
 std::string ConcreteDecoratorB::operation() const
 {
     return "ConcreteDecoratorB(" + Decorator::operation() + ")";
+}
 }
