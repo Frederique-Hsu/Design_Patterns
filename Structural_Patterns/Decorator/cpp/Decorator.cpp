@@ -7,12 +7,36 @@
 
 #include "Decorator.hpp"
 
-
-Decorator::Decorator(Component *component) : m_component{component}
+namespace dive_into_design_patterns
 {
+    Decorator::Decorator(Component *component) : m_component{component}
+    {
+    }
+
+    std::string Decorator::operation() const
+    {
+        return m_component->operation();
+    }
 }
 
-std::string Decorator::operation() const
+
+namespace gof_design_patterns
 {
-    return m_component->operation();
+    Decorator::Decorator(VisualComponent *component) : m_component{component}
+    {
+    }
+
+    Decorator::~Decorator()
+    {
+    }
+
+    void Decorator::draw()
+    {
+        m_component->draw();
+    }
+
+    void Decorator::resize()
+    {
+        m_component->resize();
+    }
 }

@@ -7,6 +7,8 @@
 
 #pragma once
 
+namespace dive_into_design_patterns
+{
 class Component;
 
 
@@ -20,3 +22,4 @@ class Client
 public:
     static void execute(Component *component);
 };
+}
