@@ -31,3 +31,6 @@ target_compile_options(${PROJECT_NAME} PRIVATE
     "-Wpedantic"
     "-Werror"
     "-Wno-gnu-conditional-omitted-operand")
+
+
+add_subdirectory(python)
