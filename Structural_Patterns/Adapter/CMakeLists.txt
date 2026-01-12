@@ -4,8 +4,17 @@ set(CURRENT_PROJECT_NAME Adapter)
 project(${CURRENT_PROJECT_NAME})
 
 
-file(GLOB_RECURSE cppsources "*.c*")
-file(GLOB_RECURSE cppheaders "*.h*")
+file(GLOB_RECURSE cppsources "cpp/*.c*")
+file(GLOB_RECURSE cppheaders "cpp/*.h*")
+
+message(STATUS "${PROJECT_NAME} project's code files list:")
+foreach(source ${cppsources})
+    message(STATUS "\t\t ${source}")
+endforeach()
+foreach(header ${cppheaders})
+    message(STATUS "\t\t ${header}")
+endforeach()
+message(STATUS "\n")
 
 add_executable(${CURRENT_PROJECT_NAME}
     ../main.cpp
@@ -23,3 +32,4 @@ target_compile_options(${CURRENT_PROJECT_NAME} PUBLIC
     "-pedantic"
     "-Werror")
 
+add_subdirectory(python)
