@@ -9,5 +9,6 @@
 *.user
 
 
-build/
+*build/
 3rd_party_libs/
+.qtcreator/
