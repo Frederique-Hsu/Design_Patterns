@@ -32,5 +32,12 @@ target_compile_options(${PROJECT_NAME} PRIVATE
     "-Werror")
 
 
+add_executable(Flyweight_Pattern
+    Flyweight_Pattern.cpp
+    Flyweight_Pattern.hpp)
+
+enable_testing()
+add_test(NAME Flyweight_Pattern
+    COMMAND $<TARGET_FILE:Flyweight_Pattern> -s)
 
 add_subdirectory(python)
